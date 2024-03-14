@@ -32,11 +32,14 @@ const postsSlice = createSlice({
   },
   selectors: {
     selectPosts: (state) => state.posts,
-    selectPostsFragment: (state, start, finish) =>  start < finish ? state.posts.slice(start, finish) : state.posts,
+    selectPostsFragment: (state, start, finish) =>  {
+      start < finish ? state.posts.slice(start, finish) : state.posts
+    },
     selectPostsCount: (state) => state.posts.length,
     selectIsLoading: (state) => state.isLoading,
   },
 });
+
 
 export const {
   selectPosts,
