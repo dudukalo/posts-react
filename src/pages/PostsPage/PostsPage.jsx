@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import {
   fetchPosts,
-  selectPostsFragment,
+  selectPosts,
   selectIsLoading,
   selectPostsCount
 } from 'store/posts.js';
@@ -30,8 +30,9 @@ const PostsPage = () => {
     return (correctPage * postsPerPage) % postsCount;
   },[page, postsCount]);
   
-  const posts = useSelector(state => selectPostsFragment(state, offset, offset + postsPerPage));
-
+  
+  const posts = useSelector(selectPosts);
+  
   const handlerNavigateClick = useCallback((pageIndex) => {
     navigate(`/posts/${pageIndex}`);
   }, []);
@@ -50,7 +51,7 @@ const PostsPage = () => {
         <div className={styles.container}>
           <h1 className={styles.title}>Статьи</h1>
           <div className={styles.postsList}>
-            <PostsList posts={posts}/> 
+            <PostsList posts={posts.slice(offset, offset + postsPerPage)}/> 
           </div>
           <Pagination
             pagesCount={Math.ceil(postsCount / postsPerPage)}

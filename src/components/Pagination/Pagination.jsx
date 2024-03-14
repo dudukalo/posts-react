@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Pagination.module.css';
 
-const Pagination = ({pagesCount, onNavigateClick}) => {
+const Pagination = React.memo(({ pagesCount, onNavigateClick }) => {
   const nav = [...Array(pagesCount)].map((_, i) => {
     const pageIndex = ++i;
     return (
@@ -21,6 +21,6 @@ const Pagination = ({pagesCount, onNavigateClick}) => {
       {nav}
     </div>
   );
-}
+});
  
-export default React.memo(Pagination);
+export default Pagination;

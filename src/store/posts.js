@@ -36,7 +36,7 @@ const postsSlice = createSlice({
     selectPostsCount: (state) => state.posts.length,
     selectIsLoading: (state) => state.isLoading,
   },
-})
+});
 
 export const {
   selectPosts,
