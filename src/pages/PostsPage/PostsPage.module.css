@@ -1,0 +1,19 @@
+@import url(css/vars.css);
+
+.page {
+  background-color: var(--bg-gray-color);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 60px 15px;
+}
+
+.title {
+  margin: 0 0 40px 0;
+}
+
+.postsList {
+  margin-bottom: 30px;
+}

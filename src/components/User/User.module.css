@@ -1,0 +1,42 @@
+@import url(css/vars.css);
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 15px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.icon {
+  width: 60px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nameLink {
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: color 0.3s;
+  outline: none;
+}
+
+.nameLink:hover {
+  text-decoration: underline;
+}
+
+.nameLink:focus-visible {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.userId {
+  font-size: 14px;
+  color: var(--desc-color);
+}
