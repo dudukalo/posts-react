@@ -1,28 +1,26 @@
-import { useNavigate } from "react-router-dom"
+import React from 'react';
 
-import styles from './Pagination.module.css'
+import styles from './Pagination.module.css';
 
-const Pagination = ({pagesCount}) => {
-  const navigate = useNavigate()
-
+const Pagination = ({pagesCount, onNavigateClick}) => {
   const nav = [...Array(pagesCount)].map((_, i) => {
-    const pageIndex = ++i
+    const pageIndex = ++i;
     return (
       <button
         key={pageIndex}
-        onClick={()=>navigate(`/posts/${pageIndex}`)}
+        onClick={()=>onNavigateClick(pageIndex)}
         className={styles.btn}
       >
         {pageIndex}
       </button>
-    )
-  })
+    );
+  });
 
   return (
     <div className={styles.pagination}>
       {nav}
     </div>
-  )
+  );
 }
  
-export default Pagination
+export default React.memo(Pagination);

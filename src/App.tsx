@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route, Redirect } from 'react-router-dom'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
 
-import PostsPages from 'pages/PostsPage/PostsPage'
-import PostPage from 'pages/PostPage/PostPage'
+import PostsPages from 'pages/PostsPage/PostsPage';
+import PostPage from 'pages/PostPage/PostPage';
 
 function App() {
   return (

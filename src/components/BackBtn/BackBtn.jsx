@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 
-import styles from './BackBtn.module.css'
+import styles from './BackBtn.module.css';
 
-import BackIcon from 'components/BackIcon/BackIcon'
+import BackIcon from 'components/BackIcon/BackIcon';
 
 const BackBtn = ({className}) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   
   return (
     <button
@@ -15,7 +15,7 @@ const BackBtn = ({className}) => {
     >
       <BackIcon />
     </button>  
-  )
+  );
 }
  
-export default BackBtn
+export default BackBtn;

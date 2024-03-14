@@ -1,6 +1,6 @@
-import styles from './PostsList.module.css'
+import styles from './PostsList.module.css';
 
-import Post from 'components/Post/Post'
+import Post from 'components/Post/Post';
 
 const PostsList = ({posts}) => {
   return (
@@ -13,7 +13,7 @@ const PostsList = ({posts}) => {
         ))
       }
     </ul>
-  )
+  );
 }
  
-export default PostsList
+export default PostsList;

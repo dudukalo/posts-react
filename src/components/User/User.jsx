@@ -1,5 +1,5 @@
-import styles from './User.module.css'
-import userIcon from 'assets/user.svg'
+import styles from './User.module.css';
+import userIcon from 'assets/user.svg';
 
 const User = ({ name, id }) => {
   return (
@@ -23,7 +23,7 @@ const User = ({ name, id }) => {
         <span className={styles.userId}>ID: {id}</span>
       </div>
     </div>
-  )
+  );
 }
  
-export default User
+export default User;

@@ -1,11 +1,11 @@
-import { createSlice, createSelector, createAsyncThunk} from '@reduxjs/toolkit'
-import axios from 'axios'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 export const fetchPost = createAsyncThunk(
   'post/fetchPost',
   async (postId) => {
-    const postResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-    const userResponse = await axios.get(`https://jsonplaceholder.typicode.com/users/${postResponse.data.userId}`)
+    const postResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+    const userResponse = await axios.get(`https://jsonplaceholder.typicode.com/users/${postResponse.data.userId}`);
 
     return {
       post: postResponse.data,
@@ -28,17 +28,17 @@ const postSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchPost.pending, (state) => {
-      state.isLoading = 'loading'
+      state.isLoading = 'loading';
     })
     builder.addCase(fetchPost.fulfilled, (state, { payload }) => {
       state.post = {
         post: payload.post,
         user: payload.user
       }
-      state.isLoading = 'loaded'
+      state.isLoading = 'loaded';
     })
     builder.addCase(fetchPost.rejected, (state) => {
-      state.isLoading = 'error'
+      state.isLoading = 'error';
     })
   },
   selectors: {
@@ -47,6 +47,6 @@ const postSlice = createSlice({
   },
 })
 
-export const { selectPost, selectIsLoading } = postSlice.selectors
+export const { selectPost, selectIsLoading } = postSlice.selectors;
 
-export default postSlice
+export default postSlice;

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
-import styles from './Post.module.css'
+import styles from './Post.module.css';
 
 const Post = ({post}) => {
   return (
@@ -21,4 +21,4 @@ const Post = ({post}) => {
   )
 }
  
-export default Post
+export default Post;
